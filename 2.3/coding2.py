@@ -14,3 +14,28 @@ Judge 4: 8.5
 Judge 5: 9
 Your Olympic score is 8.0
 """
+
+#Olympic Judging Program
+#Gabe Armour
+#Sep 23 2025
+
+print("Hi there, please judge this performance out of 10, you are allowed to add decimals.")
+
+print("Judge 1:")
+judge1 = float(input())
+
+print("Judge 2:")
+judge2 = float(input())
+
+print("Judge 3:")
+judge3 = float(input())
+
+print("Judge 4:")
+judge4 = float(input())
+
+print("Judge 5:")
+judge5 = float(input())
+
+finalScore = (judge1 + judge2 + judge3 + judge4 + judge5) / 5
+
+print("Your olympic score is " + str(finalScore) + "!")
