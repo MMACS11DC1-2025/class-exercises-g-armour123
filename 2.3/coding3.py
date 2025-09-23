@@ -25,3 +25,25 @@ Would you like fries for $3? (Yes/No)
 > yes
 Your total is $3.42
 """
+
+#McDonald's Program
+#Gabe Armour
+#Sep 23 2025
+
+print("Would you like a burger for $5? (Yes/No)")
+burgerQ = input().lower()
+
+print("Would you like fries for $3? (Yes/No)")
+friesQ = input().lower()
+
+if burgerQ == "yes" and friesQ == "yes":
+    print("Your total is $9.12")
+elif burgerQ == "yes" and friesQ == "no":
+    print("Your total is $5.70")
+elif burgerQ == "no" and friesQ == "yes":
+    print("Your total is $3.42")
+elif burgerQ == "no" and friesQ == "no":
+    print("Your total is $0")
+else:
+    print("Sorry! It seems that at least one input wasn't recognized!")
+    
