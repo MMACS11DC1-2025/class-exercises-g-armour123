@@ -1,4 +1,5 @@
-responses = open("responses.csv")
+responses = open("2.4/responses.csv")
 for response in responses:
-    if "" in response.lower():
+    response = response.split(",")
+    if " " in response:
         print(response)
