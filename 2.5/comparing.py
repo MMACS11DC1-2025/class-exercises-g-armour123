@@ -14,7 +14,12 @@ Test as you go! Describe in your comments what steps you took to test your code.
 #1. Read the whole file
 #2. Ask for two names in the file
 #3. Compare all 8 answers (each row)
-#4. Show 2 observations at the end
+#4. Show 2 observations, first one
+
+#Testing
+#1. Compare the names Aaryan Gogna and Gabe Armour. They have 2 things out of 8 in common, them being favourite fast food and favourite music genre.
+#2. Expected outputs: They should have only 2 out of 8 things in common.
+#3. Testing Results: Results showed 2 out of 8 things in common. Testing was successful.
 
 file = open("2.4/responses.csv")
 lines = file.readlines()
