@@ -121,18 +121,33 @@ else:
 
     print("\nThey have " + str(sameResults) + " answers that are the same out of 8.")
 
-    print("\nObservations:")
-    if sameResults > 6:
-        print(firstPerson[1] + " and " + secondPerson[1] + " have a lot in common!")
-    elif sameResults == 5 or sameResults == 4:
-        print(firstPerson[1] + " and " + secondPerson[1] + " have some things in common.")
-    elif sameResults <= 3:
-        print(firstPerson[1] + " and " + secondPerson[1] + " do not have a lot of things in common.")
-
-    if firstDigit > secondDigit:
-        print(firstPerson[1] + " picked a higher favorite digit than " + secondPerson[1] + ".")
-    elif firstDigit < secondDigit:
-        print(secondPerson[1] + " picked a higher favorite digit than " + firstPerson[1] + ".")
+    print("\nObservations:\n")
+    #Observation 1: Most Common Favourite Subject
+    firstSubjectCount = 0
+    secondSubjectCount = 0
+    for row in rows:
+        if row[4].lower() == firstPerson[4].lower():
+            firstSubjectCount += 1
+        if row[4].lower() == secondPerson[4].lower():
+            secondSubjectCount += 1
+    if firstSubjectCount > secondSubjectCount:
+        print(firstPerson[1] + "'s favourite subject (" + firstPerson[4] + ") is more popular than " + secondPerson[1] + "'s (" + secondPerson[4] + ") in the class.")
+    elif secondSubjectCount > firstSubjectCount:
+        print(secondPerson[1] + "'s favourite subject (" + secondPerson[4] + ") is more popular than " + firstPerson[1] + "'s (" + firstPerson[4] + ") in the class.")
     else:
-        print("They both picked the sam favorite digit.")
+        print("Both favourite subjects are equally popular in the class.")
 
+    #Observation 2: Most Popular Fast Food Restaurant
+    firstFastFoodCount = 0
+    secondFastFoodCount = 0
+    for row in rows:
+        if row[9].lower() == firstPerson[9].lower():
+            firstFastFoodCount += 1
+        if row[9].lower() == secondPerson[9].lower():
+            secondFastFoodCount += 1
+    if firstFastFoodCount > secondFastFoodCount:
+        print(firstPerson[1] + "'s favourite fast food (" + firstPerson[9] + ") is more popular than " + secondPerson[1] + "'s (" + secondPerson[9] + ") in the class.")
+    elif secondFastFoodCount > firstFastFoodCount:
+        print(secondPerson[1] + "'s favourite fast food (" + secondPerson[9] + ") is more popular than " + firstPerson[1] + "'s (" + firstPerson[9] + ") in the class.")
+    else:
+        print("Both favourite fast food choices are equally popular among classmates.")
