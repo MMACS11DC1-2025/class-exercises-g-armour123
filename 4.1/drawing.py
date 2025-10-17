@@ -46,8 +46,10 @@ def draw_brownie(x, y):
 	rylen.goto(75 + x, -82 + y)
 	rylen.left(90)
 	rylen.stamp()
+	rylen.right(90)
 while True:
 	draw_brownie(0, 0)
-	draw_brownie(50, 100)
-	draw_brownie(-100, 200)
+	draw_brownie(100, 200)
+	draw_brownie(-110, 200)
+	break
 turtle.done()
