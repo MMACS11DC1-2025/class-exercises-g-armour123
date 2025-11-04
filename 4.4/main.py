@@ -32,7 +32,19 @@ def main():
     level = int(input("Enter recursion depth (0-5): "))
     length = int(input("Enter the snowflake size: "))
 
+    #Dictionary for basic settings
+    settings = {
+        "depth": level,
+        "color": "lightblue",
+        "speed": "fastest"
+    }
 
+    #Setup turtle
+    turtle.color(settings["color"])
+    turtle.speed(settings["speed"])
+    turtle.penup()
+    turtle.goto(-length / 2, length / 3)
+    turtle.pendown()
 
     #Draw 3 sides for the full snowflake
     totalCalls = 0
