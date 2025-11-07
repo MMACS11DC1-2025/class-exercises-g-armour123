@@ -27,19 +27,46 @@ def drawSnowflake(level, length):
 def main():
     print("Welcome to the Recursive Snowflake Generator!")
     print("This program draws a snowflake using recursion.\n")
+    
+    
 
-    #Simple user inputs
-    level = int(input("Enter recursion depth (0-5): "))
-    length = int(input("Enter the snowflake size: "))
+    #Input for recursion depth
+    level = -1
+    while True:
+        userInput = input("Enter recursion depth (0-5): ")
+        if userInput.isdigit():
+            level = int(userInput)
+            if level >= 0 and level <= 5:
+                break
+            else:
+                print("Please enter a number between 0 and 5.")
+        else:
+            print("That's not a number! Try again.")
+
+    #Input for snowflake size
+    length = 0
+    while True:
+        userInput = input("Enter snowflake size (50-350): ")
+        if userInput.isdigit():
+            length = int(userInput)
+            if length <= 350 and length >= 50:
+                break
+            else:
+                print("Please enter a number between 50 and 400.")
+        else:
+            print("That's not a number! Try again.")
 
     #Dictionary for basic settings
     settings = {
         "depth": level,
         "color": "lightblue",
-        "speed": "fastest"
+        "speed": "fastest",
+        "background": "navy"
     }
 
     #Setup turtle
+    screen = turtle.Screen()
+    screen.bgcolor(settings["background"])
     turtle.color(settings["color"])
     turtle.speed(settings["speed"])
     turtle.penup()
