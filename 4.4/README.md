@@ -56,3 +56,12 @@ Because of the base case, the recursion eventually stops and doesn’t loop fore
 ### Real Output:
 ![alt text](<Screenshot 2025-11-10 124556.png>)
 - **Testing Successful**
+### Test Case 2: Base Case (Depth = 1)
+### Input:
+- **Recursion Depth:** 0
+- **Snowflake Size:** 150
+### Expected Output:
+- **A low detailed medium sized full snowflake**
+### Real Output:
+![alt text](<Screenshot 2025-11-12 122849.png>)
+- **Testing Successful**
