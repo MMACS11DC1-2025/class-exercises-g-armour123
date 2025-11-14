@@ -1,7 +1,7 @@
 from PIL import Image
 
-image_green = Image.open("CS11/5.1/kid-green.jpg").load()
-image_beach = Image.open("CS11/5.1/beach.jpg").load()
+image_green = Image.open("5.1/kid-green.jpg").load()
+image_beach = Image.open("5.1/beach.jpg").load()
 def isYellow(r, g, b):
     if r <= 255 and r >= 230 and g >= 230 and g <= 255 and b >= 0 and b <= 25:
         return "Yellow"
