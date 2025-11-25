@@ -43,34 +43,25 @@ def is_light(pixel):
 
 print(is_light((0, 0, 0)))
 """
-#Question 2 and 3
+#Question 2
 from PIL import Image
+image_beach = Image.open("5.1/beach.jpg").load()
+output_image = Image.open("5.1/beach.jpg")
+width = output_image.width
+height = output_image.height
 
-def is_light(pixel):
-    r = pixel[0]
-    g = pixel[1]
-    b = pixel[2]
-    average = int((r + g + b) / 3)
-    return average >= 128
 
-print(is_light((255, 255, 255)))
-print(is_light((0, 0, 0)))
-
-def binarize(input_filename, output_prefix):
-    output_filename = output_prefix + "output.png"
-    my_image = Image.open(input_filename).load()
-    output_image = Image.open(input_filename)
-
-    img_width = output_image.width
-    img_height = output_image.height
-
-    for col in range(img_width):
-        for row in range(img_height):
-            if is_light(my_image[col, row]):
-                output_image.putpixel((col, row), (255, 255, 255))
-            else:
-                output_image.putpixel((col, row), (0, 0, 0))
-
-    output_image.save(output_filename, "png")
-
-binarize("beach.jpg", "beach2")
+for i in range(width):
+    for j in range(height):
+        r = image_beach[i, j][0]
+        g = image_beach[i, j][1]
+        b = image_beach[i, j][2]
+        
+        if ((r + b + g) / 3) >= 128:
+            xy = (i, j)
+            colour1 = (255, 255, 255)
+            output_image.putpixel(xy, colour1)
+        else:
+            colour2 = (0, 0, 0)
+            output_image.putpixel(xy, colour2)
+output_image.save("output.png")
