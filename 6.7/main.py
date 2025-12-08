@@ -19,7 +19,7 @@ images = [
     "6.7/SlightlyRusted.jpg",
     "6.7/SpotsOFRust.jpg"
 ]
-
+results = []
 for files in images:
     file = Image.open(files)
     img = file.load()
@@ -29,3 +29,17 @@ for files in images:
     rustyPixels = 0
     notRustyPixels = 0
 
+    for i in range(width):
+        for j in range(height):
+            r, g, b = img[i, j]
+            if isRusty(r, g, b):
+                rustyPixels += 1
+            elif isNotRusty(r, g, b):
+                notRustyPixels += 1
+
+    totalPixels = rustyPixels + notRustyPixels
+    rustinessPercent = rustyPixels / totalPixels * 100
+
+    results.append((files, rustinessPercent))
+
+    
