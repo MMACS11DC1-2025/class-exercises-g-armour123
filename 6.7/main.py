@@ -1,3 +1,15 @@
+#Algorithm (In Simple English):
+#1. Load a list of images showing metal surfaces.
+#2. For each image, check every pixel using nested loops.
+#3. Count how many pixels look rusty and how many do not.
+#4. Calculate the rust percentage for each image.
+#5. Convert the rust percentage into a rust level from 1 to 4.
+#6. Store the image name, rust percentage, and rust level in a list.
+#7. Sort the list from highest rust level to lowest using Selection Sort.
+#8. Display the top 5 most rusted images.
+#9. Use Binary Search to check if a specific rust level exists.
+#10. Print all images that match the searched rust level.
+
 from PIL import Image
 import time
 
@@ -9,7 +21,7 @@ def isRusty(r, g, b):
 def isNotRusty(r, g, b):
     return (r > 100 and g > 100 and b > 120) or (r < 50 and g < 50 and b < 50)
 
-#Convert rust percentage into a rust level (1–4)
+#Convert rust percentage into a rust level (1-4). This is easier as we don't need exact percentages later.
 def getRustLevel(rustPercent):
     if rustPercent < 10:
         return 1
@@ -94,7 +106,7 @@ for files in images:
     rustLevel = getRustLevel(rustinessPercent)
 
     #Store filename, percentage, and rust level
-    results.append((files, rustinessPercent, rustLevel))
+    results.append((files, str(rustinessPercent) + "%", rustLevel))
 
 #End timing
 t1 = time.time()
